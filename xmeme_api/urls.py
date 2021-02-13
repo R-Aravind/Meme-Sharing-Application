@@ -14,12 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
+
 from memes.views import MemeView
+
 urlpatterns = [
-    # path('admin/', admin.site.urls),
-    path('api/memes/<str:meme_id>', MemeView.as_view()),
-    path('api/memes/', MemeView.as_view()),
-    path('api/comment/', MemeView.post_comment),
-    path('api/like/', MemeView.like_meme)
+    path('memes/<str:meme_id>', MemeView.as_view()),
+    re_path(r'^memes/?$', MemeView.as_view()),
+    re_path(r'^comment/?$', MemeView.post_comment),
+    re_path(r'^like/?$', MemeView.like_meme)
 ]

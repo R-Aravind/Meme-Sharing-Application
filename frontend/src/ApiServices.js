@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-export const apiUrl = "http://3.21.6.196";
+export const apiUrl = "http://localhost:8081";
 
 function API() {
 
@@ -8,7 +8,7 @@ function API() {
     const [commentID, setCommentID] = useState();
     const [likeID, setLikeID] = useState();
     const [updateMemeID, setUpdateMemeID] = useState();
-  
+    const [count, setCount] = useState(0);
     const [loading, setLoading] = useState("");    
     const [memes, setMemes] = useState([]);
     
@@ -25,7 +25,7 @@ function API() {
   
     useEffect(() => {
       fetchMemes();
-    }, [likeID, memeID, commentID, updateMemeID])
+    }, [likeID, memeID, commentID, updateMemeID, count])
   
     async function postMemes(meme) {
         try {
@@ -93,7 +93,8 @@ function API() {
             body: JSON.stringify(meme)
         });
         const json = await response.json();
-        setUpdateMemeID(`${json.id}+${json.caption}+${json.url}`);
+        setUpdateMemeID(`${json.id} - ${count}`);
+        setCount(count+1);
         alert("Meme updated");
     } catch (error) {
       setUpdateMemeID(`error : ${error}`);
