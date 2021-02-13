@@ -1,17 +1,23 @@
+// Libraries
 import { useState, useEffect } from 'react'
 
+// REST API endpoint url
 export const apiUrl = "http://localhost:8081";
 
 function API() {
 
+    // States to keep track of the given methods
     const [memeID, setMemeID] = useState()
     const [commentID, setCommentID] = useState();
     const [likeID, setLikeID] = useState();
     const [updateMemeID, setUpdateMemeID] = useState();
     const [count, setCount] = useState(0);
     const [loading, setLoading] = useState("");    
+
+    // State to store the memes fetched from the api
     const [memes, setMemes] = useState([]);
     
+    // Get latest 100 memes
     async function fetchMemes() {
       try {
         setLoading("true")
@@ -23,10 +29,14 @@ function API() {
       }
     }
   
+    // Hook to Fetch the memes and render the page
+    // when new comments, memes, likes or updates happen
     useEffect(() => {
       fetchMemes();
     }, [likeID, memeID, commentID, updateMemeID, count])
   
+    // Post a Meme to the API
+    // GET : api-url/memes
     async function postMemes(meme) {
         try {
             const response = await fetch(`${apiUrl}/memes/`, {
@@ -46,6 +56,8 @@ function API() {
         return [memeID];
     }
   
+    // Post a comment on a Meme
+    // POST : api-url/comment
     async function postComment(comment) {
       try {
           const response = await fetch(`${apiUrl}/comment/`, {
@@ -64,6 +76,8 @@ function API() {
       return [commentID];
   }
   
+  // Like a Meme
+  // POST : api-url/like
   async function postLike(like, likeCount) {
       try {
           const response = await fetch(`${apiUrl}/like/`, {
@@ -82,6 +96,8 @@ function API() {
       return [likeID];
   }
   
+  // Update a Meme
+  // PATCH : api-url/memes
   async function updateMeme(meme) {
     try {
         const response = await fetch(`${apiUrl}/memes/`, {

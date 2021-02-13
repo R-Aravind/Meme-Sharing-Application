@@ -1,9 +1,14 @@
+// Libraries
 import React, { useState } from 'react';
+
+// Components
 import CommentForm from './CommentForm';
 import EditMemeForm from './EditMemeForm';
 
 const Card = (props) => {
 
+    // States to show/hide the Comments section and 
+    // update meme form
     const [showComments, setShowCommments] = useState(false);
     const [showEditMeme, setShowEditMeme] = useState(false);
 

@@ -1,7 +1,8 @@
+// Libraries
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 
-const Basic = (props) => (
+const CreateMemeForm = (props) => (
    <div className="form-container">
      <h1 className="mt-10 text-xl">Submit a meme</h1>
      <Formik 
@@ -25,6 +26,7 @@ const Basic = (props) => (
          return errors;
 
        }}
+       
        onSubmit={(values, { setSubmitting }) => {
          setTimeout(() => {
            props.postMemes(values);
@@ -56,4 +58,4 @@ const Basic = (props) => (
    </div>
  );
  
- export default Basic;
+ export default CreateMemeForm;

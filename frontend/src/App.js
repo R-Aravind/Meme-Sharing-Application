@@ -1,12 +1,17 @@
+// Libraries
 import React from 'react';
-import Basic from './Form'
+
+// Components
+import CreateMemeForm from './CreateMemForm'
 import Card from './Card'
 import API from './ApiServices';
 
 function App() {
   
+  // Methods for consuming the API
   const [postMemes, postComment, postLike, updateMeme, loading, memes] = API();
 
+  // Main application
   return (
     <div>
       <header className="header">
@@ -14,7 +19,7 @@ function App() {
       </header>
 
     <div className="md:flex">
-      <Basic
+      <CreateMemeForm
         postMemes={postMemes}
       />
       <div className="p-5 md:overflow-y-auto md:h-screen md:p-20 md:w-2/4">
