@@ -1,0 +1,16 @@
+*.log
+*.pot
+*.pyc
+__pycache__/
+db.sqlite3
+media
+.idea/
+
+memes/migrations/
+venv/
+virtualenv/
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

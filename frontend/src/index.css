@@ -1,0 +1,46 @@
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.header {
+  @apply fixed w-screen px-5 py-3 bg-gray-100 border-b md:px-10 lg:px-20;
+}
+
+.form-container {
+  @apply p-5 md:p-10 lg:p-20 md:w-2/4;
+}
+
+.form {
+  @apply p-10 mt-5 border rounded-sm shadow-md;
+}
+
+.form-input {
+  @apply w-full p-2 mt-2 bg-gray-100 border rounded-md outline-none focus:border-gray-300;
+}
+
+.form-button {
+  @apply px-5 py-2 mt-5 text-blue-100 bg-blue-500 border rounded-md hover:bg-blue-600 focus:outline-none;
+}
+
+.form-error {
+  @apply mt-1 text-xs font-semibold text-red-500;
+}
+
+.card {
+  @apply w-full p-10 mt-5 border rounded-sm shadow-md;
+}
+
+.card-button {
+  font-size: 0.6rem;
+  line-height: 1rem;
+  @apply px-3 py-2 font-semibold text-blue-100 bg-blue-500 border rounded-md md:px-5 md:py-2 md:text-xs hover:bg-blue-600 focus:outline-none;
+}
+
+.card-input {
+  @apply w-7/12 p-2 mt-2 text-xs border rounded-md outline-none md:w-8/12;
+}
+
+.card-comment-button {
+  @apply px-5 py-2 ml-2 text-xs font-semibold text-blue-100 bg-blue-500 border rounded-md hover:bg-blue-600 focus:outline-none;
+}
