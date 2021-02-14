@@ -1,6 +1,6 @@
 ## XMeme
 
-**A Meme streaming application where users can post memes by providing their name, a caption for the meme and the URL for the meme image as input. The Timeline will display the latest 100 posted Memes**
+A **Meme streaming application** where users can post memes by providing their name, a caption for the meme and the URL for the meme image as input. The Timeline will display the latest 100 posted Memes.
 
 ## Tech Stack used
 
