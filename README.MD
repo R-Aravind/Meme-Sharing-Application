@@ -14,12 +14,12 @@ Backend | Python 3.8.7 | Django 3.1.6
 Run install.sh to install the requirements and pre-requisites.
 
 ```console
-sudo apt-get update
+foo@bar:~$ sudo apt-get update
 
-sudo apt-get install -y python3    
-sudo apt-get install -y python3-pip
+foo@bar:~$ sudo apt-get install -y python3    
+foo@bar:~$ sudo apt-get install -y python3-pip
 
-pip3 install -r ./requirements.txt  
+foo@bar:~$ pip3 install -r ./requirements.txt  
 ```
 
 Run server_run.sh to configure the database and start the server.
