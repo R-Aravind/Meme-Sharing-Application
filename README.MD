@@ -26,7 +26,7 @@ Run server_run.sh to configure the database and start the server.
 
 ```console
 foo@bar:~$ python3 ./manage.py makemigrations        
-foo@bar:~$ python3 ./manage.py migrate
+foo@bar:~$ python3 ./manage.py migrate --run-syncdb
 
 foo@bar:~$ python3 ./manage.py runserver 0.0.0.0:8081
 
